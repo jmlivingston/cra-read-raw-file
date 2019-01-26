@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint import/no-webpack-loader-syntax: off */
+import FooText from "!raw-loader!./Foo.js";
+import React, { Component } from "react";
+import Foo from "./Foo";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1>Use</h1>
+        <pre>
+          <code>{`<Foo name={"test"} />`}</code>
+        </pre>
+        <hr />
+        <h1>Result</h1>
+        <Foo name={"test"} />
+        <hr />
+        <h1>Component</h1>
+        <pre>
+          <code>{FooText}</code>
+        </pre>
       </div>
     );
   }
